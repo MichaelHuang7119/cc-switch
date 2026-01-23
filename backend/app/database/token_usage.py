@@ -26,6 +26,7 @@ class TokenUsageManager:
     ) -> Optional[Any]:
         """Execute a query with proper resource cleanup."""
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -45,6 +46,8 @@ class TokenUsageManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def _execute_update(
         self,
@@ -54,6 +57,7 @@ class TokenUsageManager:
     ) -> int:
         """Execute an update/insert/delete query with proper resource cleanup."""
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -75,6 +79,8 @@ class TokenUsageManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def update_token_usage(
         self,

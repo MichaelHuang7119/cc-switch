@@ -39,6 +39,7 @@ class OAuthAccountsManager:
             Query results based on fetch mode
         """
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -58,6 +59,8 @@ class OAuthAccountsManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def _execute_update(
         self,
@@ -76,6 +79,7 @@ class OAuthAccountsManager:
             Number of rows affected or last row id
         """
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -99,6 +103,8 @@ class OAuthAccountsManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def create_or_update_oauth_account(
         self,

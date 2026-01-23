@@ -25,6 +25,8 @@ class HealthHistoryManager:
         error_message: Optional[str] = None
     ):
         """Log provider health status."""
+        conn = None
+        cursor = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -38,6 +40,14 @@ class HealthHistoryManager:
             await conn.commit()
         except Exception as e:
             logger.error(f"Failed to log health status: {e}")
+        finally:
+            if cursor is not None:
+                try:
+                    await cursor.close()
+                except Exception:
+                    pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def get_health_history(
         self,
@@ -45,6 +55,8 @@ class HealthHistoryManager:
         limit: int = 100
     ) -> List[Dict[str, Any]]:
         """Get provider health history."""
+        conn = None
+        cursor = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -66,3 +78,11 @@ class HealthHistoryManager:
         except Exception as e:
             logger.error(f"Failed to get health history: {e}")
             return []
+        finally:
+            if cursor is not None:
+                try:
+                    await cursor.close()
+                except Exception:
+                    pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)

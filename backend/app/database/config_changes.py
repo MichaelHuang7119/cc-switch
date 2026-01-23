@@ -28,6 +28,8 @@ class ConfigChangesManager:
         changed_by: Optional[str] = None
     ):
         """Log a configuration change."""
+        conn = None
+        cursor = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -48,6 +50,14 @@ class ConfigChangesManager:
             await conn.commit()
         except Exception as e:
             logger.error(f"Failed to log config change: {e}")
+        finally:
+            if cursor is not None:
+                try:
+                    await cursor.close()
+                except Exception:
+                    pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def get_config_changes(
         self,
@@ -55,6 +65,8 @@ class ConfigChangesManager:
         entity_type: Optional[str] = None
     ) -> List[Dict[str, Any]]:
         """Get configuration changes."""
+        conn = None
+        cursor = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -76,3 +88,11 @@ class ConfigChangesManager:
         except Exception as e:
             logger.error(f"Failed to get config changes: {e}")
             return []
+        finally:
+            if cursor is not None:
+                try:
+                    await cursor.close()
+                except Exception:
+                    pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)

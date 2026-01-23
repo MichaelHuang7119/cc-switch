@@ -67,6 +67,7 @@ class ConversationsManager:
             Query results based on fetch mode
         """
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -86,6 +87,8 @@ class ConversationsManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def _execute_update(
         self,
@@ -104,6 +107,7 @@ class ConversationsManager:
             Number of rows affected or last row id
         """
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -127,6 +131,8 @@ class ConversationsManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def create_conversation(
         self,
@@ -415,37 +421,44 @@ class ConversationsManager:
         Returns:
             Message ID if successful, None otherwise
         """
+        conn = None
+        cursor = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
-            try:
-                # Insert new message
-                await cursor.execute(
-                    """
-                    INSERT INTO conversation_messages
-                    (conversation_id, role, content, provider_name, model, thinking, input_tokens, output_tokens, api_format, parent_message_id, model_instance_index)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """,
-                    (conversation_id, role, content, provider_name, model, thinking, input_tokens, output_tokens, api_format, parent_message_id, model_instance_index or 0),
-                )
-                message_id = cursor.lastrowid
+            # Insert new message
+            await cursor.execute(
+                """
+                INSERT INTO conversation_messages
+                (conversation_id, role, content, provider_name, model, thinking, input_tokens, output_tokens, api_format, parent_message_id, model_instance_index)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (conversation_id, role, content, provider_name, model, thinking, input_tokens, output_tokens, api_format, parent_message_id, model_instance_index or 0),
+            )
+            message_id = cursor.lastrowid
 
-                # Update conversation updated_at
-                await cursor.execute(
-                    """
-                    UPDATE conversations SET updated_at = CURRENT_TIMESTAMP WHERE id = ?
-                    """,
-                    (conversation_id,),
-                )
+            # Update conversation updated_at
+            await cursor.execute(
+                """
+                UPDATE conversations SET updated_at = CURRENT_TIMESTAMP WHERE id = ?
+                """,
+                (conversation_id,),
+            )
 
-                await conn.commit()
-                logger.debug(f"Added message {message_id} to conversation {conversation_id}")
-                return message_id
-            finally:
-                await cursor.close()
+            await conn.commit()
+            logger.debug(f"Added message {message_id} to conversation {conversation_id}")
+            return message_id
         except Exception as e:
             logger.error(f"Failed to add message to conversation {conversation_id}: {e}")
             return None
+        finally:
+            if cursor is not None:
+                try:
+                    await cursor.close()
+                except Exception:
+                    pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def get_messages(
         self, conversation_id: int, limit: Optional[int] = None

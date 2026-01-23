@@ -1,8 +1,9 @@
 """Database core functionality - connection and initialization."""
 import os
+import asyncio
 import aiosqlite
 import logging
-from typing import Optional
+from typing import Optional, List
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
@@ -27,38 +28,73 @@ class DatabaseCore:
             os.makedirs(db_dir, exist_ok=True)
 
         self.db_path = db_path
-        self._pool: Optional[aiosqlite.Connection] = None
-        self._pool_size = int(os.getenv("DB_POOL_SIZE", "10"))
+        self._connections: List[aiosqlite.Connection] = []
+        self._max_connections = int(os.getenv("DB_POOL_SIZE", "10"))
         self._pool_timeout = float(os.getenv("DB_POOL_TIMEOUT", "30.0"))
+        self._lock = asyncio.Lock()
 
-    async def get_connection(self):
+    async def get_connection(self) -> aiosqlite.Connection:
         """Get database connection from pool."""
-        if self._pool is None:
-            # Create connection pool
-            self._pool = await aiosqlite.connect(
-                self.db_path,
-                timeout=self._pool_timeout,
-                check_same_thread=False
-            )
-            # Enable row factory for column access by name
-            self._pool.row_factory = aiosqlite.Row
-            # Set WAL mode for better concurrency
-            cursor = await self._pool.cursor()
-            await cursor.execute("PRAGMA journal_mode=WAL")
-            await cursor.execute("PRAGMA synchronous=NORMAL")
-            await cursor.execute("PRAGMA cache_size=-64000")  # 64MB cache
-            await cursor.execute("PRAGMA temp_store=MEMORY")
-            await self._pool.commit()
-            await cursor.close()
-            logger.info(f"Database connection pool initialized: {self.db_path}")
-        return self._pool
+        async with self._lock:
+            # Try to reuse an existing connection
+            while self._connections:
+                conn = self._connections.pop()
+                try:
+                    # Check if connection is still valid
+                    await conn.execute("SELECT 1")
+                    return conn
+                except Exception:
+                    # Connection is invalid, close it and try another
+                    try:
+                        await conn.close()
+                    except Exception:
+                        pass
+                    continue
+
+        # Create new connection
+        conn = await aiosqlite.connect(
+            self.db_path,
+            timeout=self._pool_timeout,
+            check_same_thread=False
+        )
+        # Enable row factory for column access by name
+        conn.row_factory = aiosqlite.Row
+        # Set WAL mode for better concurrency
+        cursor = await conn.cursor()
+        await cursor.execute("PRAGMA journal_mode=WAL")
+        await cursor.execute("PRAGMA synchronous=NORMAL")
+        await cursor.execute("PRAGMA cache_size=-64000")  # 64MB cache
+        await cursor.execute("PRAGMA temp_store=MEMORY")
+        await conn.commit()
+        await cursor.close()
+        logger.debug(f"Created new database connection (pool size: {len(self._connections)}/{self._max_connections})")
+        return conn
+
+    async def release_connection(self, conn: aiosqlite.Connection):
+        """Release connection back to pool."""
+        async with self._lock:
+            if len(self._connections) < self._max_connections:
+                try:
+                    await conn.execute("SELECT 1")  # Check connection is still valid
+                    self._connections.append(conn)
+                    return
+                except Exception:
+                    pass
+            try:
+                await conn.close()
+            except Exception:
+                pass
 
     async def close(self):
-        """Close database connection pool."""
-        if self._pool:
-            await self._pool.close()
-            self._pool = None
-            logger.info("Database connection pool closed")
+        """Close all database connections in pool."""
+        async with self._lock:
+            while self._connections:
+                conn = self._connections.pop()
+                try:
+                    await conn.close()
+                except Exception:
+                    pass
+            logger.info(f"Database connection pool closed ({len(self._connections)} connections)")
 
     async def init_database(self):
         """Initialize database schema."""

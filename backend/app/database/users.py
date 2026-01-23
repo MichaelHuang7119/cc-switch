@@ -38,6 +38,7 @@ class UsersManager:
             Query results based on fetch mode
         """
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -57,6 +58,8 @@ class UsersManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def _execute_update(
         self,
@@ -75,6 +78,7 @@ class UsersManager:
             Number of rows affected or last row id
         """
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -98,6 +102,8 @@ class UsersManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def create_user(
         self,

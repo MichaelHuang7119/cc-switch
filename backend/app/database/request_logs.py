@@ -28,6 +28,7 @@ class RequestLogsManager:
     ) -> Optional[Any]:
         """Execute a query with proper resource cleanup."""
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -47,6 +48,8 @@ class RequestLogsManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def _execute_update(
         self,
@@ -56,6 +59,7 @@ class RequestLogsManager:
     ) -> int:
         """Execute an update/insert/delete query with proper resource cleanup."""
         cursor = None
+        conn = None
         try:
             conn = await self.db_core.get_connection()
             cursor = await conn.cursor()
@@ -77,6 +81,8 @@ class RequestLogsManager:
                     await cursor.close()
                 except Exception:
                     pass
+            if conn is not None:
+                await self.db_core.release_connection(conn)
 
     async def log_request(
         self,

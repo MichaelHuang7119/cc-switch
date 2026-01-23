@@ -7,7 +7,7 @@ from ..core.auth import require_user, require_conversations
 
 router = APIRouter(prefix="/api/conversations", tags=["conversations"])
 
-def format_datetime(dt_str: str) -> str:
+def format_datetime(dt_str: str | None) -> str | None:
     """Convert datetime string to Beijing time ISO format."""
     if not dt_str:
         return None
@@ -68,8 +68,8 @@ class ConversationResponse(BaseModel):
     api_format: Optional[str]
     model: Optional[str]
     last_model: Optional[str] = Field(None, description="Last user message model")
-    created_at: str = Field(..., description="ISO 8601 Beijing time (UTC+8)")
-    updated_at: str = Field(..., description="ISO 8601 Beijing time (UTC+8)")
+    created_at: Optional[str] = Field(None, description="ISO 8601 Beijing time (UTC+8)")
+    updated_at: Optional[str] = Field(None, description="ISO 8601 Beijing time (UTC+8)")
 
 class MessageResponse(BaseModel):
     """Message response model."""
@@ -80,7 +80,7 @@ class MessageResponse(BaseModel):
     model: Optional[str]
     input_tokens: Optional[int]
     output_tokens: Optional[int]
-    created_at: str = Field(..., description="ISO 8601 Beijing time (UTC+8)")
+    created_at: Optional[str] = Field(None, description="ISO 8601 Beijing time (UTC+8)")
     provider_name: Optional[str]
     api_format: Optional[str]
     parent_message_id: Optional[int] = None
@@ -96,8 +96,8 @@ class ConversationDetailResponse(BaseModel):
     last_model: Optional[str] = Field(None, description="Last user message model")
     last_provider_name: Optional[str] = Field(None, description="Last user message provider")
     last_api_format: Optional[str] = Field(None, description="Last user message API format")
-    created_at: str = Field(..., description="ISO 8601 Beijing time (UTC+8)")
-    updated_at: str = Field(..., description="ISO 8601 Beijing time (UTC+8)")
+    created_at: Optional[str] = Field(None, description="ISO 8601 Beijing time (UTC+8)")
+    updated_at: Optional[str] = Field(None, description="ISO 8601 Beijing time (UTC+8)")
     messages: List[MessageResponse]
 
 @router.get("", response_model=List[ConversationResponse])
