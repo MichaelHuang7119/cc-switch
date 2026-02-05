@@ -1,6 +1,6 @@
 {
-  "name": "Anthropic OpenAI Bridge",
-  "short_name": "AOB",
+  "name": "CC Switch",
+  "short_name": "CCS",
   "description": "Anthropic-compatible API proxy service management panel",
   "start_url": "/",
   "display": "browser",

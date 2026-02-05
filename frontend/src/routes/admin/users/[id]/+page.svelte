@@ -120,7 +120,7 @@
 
 <svelte:head>
   <title>
-    {t("permissions.title")} - {user?.email || ""} - Anthropic OpenAI Bridge
+    {t("permissions.title")} - {user?.email || ""} - CC Switch
   </title>
 </svelte:head>
 

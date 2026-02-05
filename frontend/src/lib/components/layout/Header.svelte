@@ -4,7 +4,7 @@
   import SettingsModal from '$components/SettingsModal.svelte';
   import { onMount } from 'svelte';
 
-  let { title = 'Anthropic OpenAI Bridge', subtitle = '', nav } = $props<{
+  let { title = 'CC Switch', subtitle = '', nav } = $props<{
     title?: string;
     subtitle?: string;
     nav?: () => any;
@@ -95,7 +95,7 @@
 <header class="header">
   <div class="container">
     <div class="brand">
-      <img src="/favicon.svg" alt="Anthropic OpenAI Bridge Logo" class="brand-icon" />
+      <img src="/favicon.svg" alt="CC Switch Logo" class="brand-icon" />
       <div class="brand-text" bind:this={marqueeContainerRef}>
         <h1>
           {#if isTitleTruncated}

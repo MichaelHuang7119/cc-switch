@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Performance benchmark for Anthropic OpenAI Bridge streaming output.
+Performance benchmark for CC Switch streaming output.
 
 This script tests the performance of streaming responses to measure:
 - First chunk latency
@@ -170,7 +170,7 @@ def generate_performance_report():
 
 
 if __name__ == "__main__":
-    print("\n🚀 Anthropic OpenAI Bridge Performance Benchmark")
+    print("\n🚀 CC Switch Performance Benchmark")
     print("=" * 60)
     print()
 

@@ -236,7 +236,7 @@
 
 <div class="app" class:chat-layout={currentPathname === '/chat'}>
   {#if currentPathname !== '/login' && !currentPathname.startsWith('/oauth/')}
-    <Header title="Anthropic OpenAI Bridge">
+    <Header title="CC Switch">
       {#snippet nav()}
         <nav>
           {#each navItems as item}
@@ -257,7 +257,7 @@
   </main>
   {#if currentPathname !== '/login' && currentPathname !== '/chat' && !currentPathname.startsWith('/oauth/')}
     <footer class="footer">
-      <p>© 2025 Anthropic OpenAI Bridge.</p>
+      <p>© 2025 CC Switch.</p>
     </footer>
   {/if}
   <Toast />

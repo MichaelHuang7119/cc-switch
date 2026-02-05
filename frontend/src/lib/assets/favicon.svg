@@ -1,46 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- 背景：纯蓝色 -->
   <defs>
-    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0056b3;stop-opacity:1" />
+    <linearGradient id="ccGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
     </linearGradient>
-    <!-- 发光效果 -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <circle cx="32" cy="32" r="30" fill="url(#blueGradient)"/>
 
-  <!-- 桥接符号：优雅的S型曲线 -->
-  <!-- 主连接线 -->
-  <path d="M 14 32 Q 26 18 32 28 Q 38 18 50 32"
-        stroke="#ffffff"
-        stroke-width="3.5"
-        fill="none"
+  <!-- 背景 -->
+  <circle cx="32" cy="32" r="30" fill="url(#ccGradient4)"/>
+
+  <!-- 双C交叉 - 左侧C -->
+  <path d="M 26 18
+           L 18 26
+           L 18 38
+           L 26 46"
+        stroke="white"
+        stroke-width="6"
         stroke-linecap="round"
-        stroke-linejoin="round"
-        opacity="0.95"/>
-  <!-- 底部平行线表示连接 -->
-  <path d="M 14 32 Q 32 42 50 32"
-        stroke="#ffffff"
-        stroke-width="2"
-        fill="none"
+        fill="none"/>
+
+  <!-- 右侧C (反向) -->
+  <path d="M 38 46
+           L 46 38
+           L 46 26
+           L 38 18"
+        stroke="white"
+        stroke-width="6"
         stroke-linecap="round"
-        opacity="0.7"/>
+        fill="none"/>
 
-  <!-- 桥的锚点：左右两侧的小圆点 -->
-  <circle cx="14" cy="32" r="2" fill="#ffffff" opacity="0.9"/>
-  <circle cx="50" cy="32" r="2" fill="#ffffff" opacity="0.9"/>
-
-  <!-- 中心核心：更精致的中心点，带微光 -->
-  <circle cx="32" cy="28" r="3.5" fill="#ffffff" opacity="0.95" filter="url(#glow)"/>
-  <circle cx="32" cy="28" r="1.5" fill="#FFD700" opacity="0.8"/>
-
-  <!-- 桥的支柱：底部支撑线 -->
-  <path d="M 32 31.5 L 32 34" stroke="#ffffff" stroke-width="1.5" opacity="0.8" stroke-linecap="round"/>
+  <!-- 中心连接点 -->
+  <circle cx="32" cy="32" r="5" fill="white"/>
 </svg>

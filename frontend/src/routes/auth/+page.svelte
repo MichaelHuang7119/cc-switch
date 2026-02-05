@@ -78,7 +78,7 @@
 </script>
 
 <svelte:head>
-  <title>Logging in... - Anthropic OpenAI Bridge</title>
+  <title>Logging in... - CC Switch</title>
 </svelte:head>
 
 <!-- Minimal loading indicator - no success animation -->

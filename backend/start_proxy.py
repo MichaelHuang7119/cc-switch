@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Start Anthropic OpenAI Bridge server.
+Start CC Switch server.
 
 This script starts the FastAPI server with uvicorn, supporting:
 - Custom HOST and PORT via environment variables
@@ -70,7 +70,7 @@ def find_process_using_port(port: int) -> str:
 def main():
     """Main entry point for starting the proxy server."""
     parser = argparse.ArgumentParser(
-        description='Start Anthropic OpenAI Bridge server',
+        description='Start CC Switch server',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -172,7 +172,7 @@ Examples:
 
     # Print startup information
     dev_mode = os.environ.get('DEV_MODE', 'false').lower() in ('true', '1', 'yes')
-    print("🚀 Starting Anthropic OpenAI Bridge Server")
+    print("🚀 Starting CC Switch Server")
     print(f"   Host: {host}")
     print(f"   Port: {port}")
     print(f"   Provider Config: {os.environ.get('PROVIDER_CONFIG_PATH', './provider.json')}")

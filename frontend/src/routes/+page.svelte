@@ -19,7 +19,7 @@
 
   // Set page title
   if (browser) {
-    document.title = 'Anthropic OpenAI Bridge';
+    document.title = 'CC Switch';
   }
 
   let loading = $state(true);

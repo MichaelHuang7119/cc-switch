@@ -1,4 +1,4 @@
-"""Main FastAPI application for Anthropic OpenAI Bridge"""
+"""Main FastAPI application for CC Switch"""
 import os
 import logging
 from logging.handlers import RotatingFileHandler
@@ -90,7 +90,7 @@ if _telemetry_enabled:
     try:
         from .infrastructure.telemetry import initialize_telemetry, instrument_fastapi, instrument_httpx
         initialize_telemetry(
-            service_name="anthropic-openai-bridge",
+            service_name="cc-switch",
             otlp_endpoint=os.getenv("OTLP_ENDPOINT"),
             enable_tracing=True,
             enable_metrics=True
@@ -109,21 +109,21 @@ logging.getLogger("httpcore").setLevel(logging.WARNING)
 logging.getLogger("aiosqlite").setLevel(logging.WARNING)
 
 app = FastAPI(
-    title="Anthropic OpenAI Bridge",
+    title="CC Switch",
     description="""
-    Anthropic-compatible API proxy service.
-    
+    CC Switch - High-performance AI Model API Proxy
+
     ## Claude Code 配置
-    
+
     在 Claude Code 中使用本服务，需要配置以下环境变量：
-    
+
     ```bash
     export ANTHROPIC_BASE_URL=http://localhost:5175
     export ANTHROPIC_API_KEY="any-value"
     ```
-    
+
     然后启动 Claude Code 进行 Vibe Coding。
-    
+
     **注意**：`ANTHROPIC_BASE_URL` 需要替换为实际的前端服务地址。
     """,
     version="1.0.0"

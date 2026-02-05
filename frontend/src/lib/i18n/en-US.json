@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
-    "subtitle": "Bridging Two Powerful AIs"
+    "title": "CC Switch",
+    "subtitle": "AI Model API Proxy"
   },
   "nav": {
     "home": "Home",
@@ -197,7 +197,7 @@
     "selectModelFirst": "Please select a model first"
   },
   "welcome": {
-    "title": "Welcome to Anthropic OpenAI Bridge",
+    "title": "Welcome to CC Switch",
     "projectDescription": "A powerful bridge service that connects Claude and other AI providers, enabling unified API access and intelligent fallback mechanisms for seamless AI integration.",
     "feature1": "Unified API access to multiple AI providers (Claude, OpenAI, etc.)",
     "feature2": "Intelligent provider fallback and circuit breaker protection",
@@ -539,7 +539,7 @@
   "home": {
     "title": "Dashboard",
     "welcome": {
-      "title": "Welcome to Anthropic OpenAI Bridge",
+      "title": "Welcome to CC Switch",
       "subtitle": "Unified management of multiple AI model providers to improve development efficiency"
     },
     "systemStatus": {

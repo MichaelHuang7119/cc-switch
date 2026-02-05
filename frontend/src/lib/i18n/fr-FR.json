@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
-    "subtitle": "Relier deux IA puissantes"
+    "title": "CC Switch",
+    "subtitle": "AI Model API Proxy"
   },
   "nav": {
     "home": "Accueil",
@@ -599,7 +599,7 @@
       "copyFailed": "Échec de la copie, veuillez copier manuellement"
     },
     "welcome": {
-      "title": "Bienvenue sur Anthropic OpenAI Bridge",
+      "title": "Bienvenue sur CC Switch",
       "subtitle": "Gestion unifiée de plusieurs fournisseurs de modèles d'IA pour améliorer l'efficacité du développement"
     },
     "welcomeActions": {
@@ -651,7 +651,7 @@
     "toggleThemeShortcut": "(Raccourcis de basculement de thème: plusieurs combinaisons prises en charge)"
   },
   "welcome": {
-    "title": "Bienvenue dans Anthropic OpenAI Bridge",
+    "title": "Bienvenue dans CC Switch",
     "projectDescription": "Un puissant service de pont qui connecte Claude et d'autres fournisseurs d'IA, permettant un accès API unifié et des mécanismes de fallback intelligents pour une intégration IA transparente.",
     "feature1": "Accès API unifié à plusieurs fournisseurs d'IA (Claude, OpenAI, etc.)",
     "feature2": "Fallback intelligent de fournisseur et protection de disjoncteur",

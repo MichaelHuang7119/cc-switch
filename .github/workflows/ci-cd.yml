@@ -8,7 +8,7 @@ on:
 
 env:
   DOCKERHUB_USERNAME: michael7119
-  IMAGE_NAME: anthropic-openai-bridge
+  IMAGE_NAME: cc-switch
 
 jobs:
   backend-test:
@@ -105,7 +105,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: michael7119/anthropic-openai-bridge-backend
+          images: michael7119/cc-switch-backend
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -119,7 +119,7 @@ jobs:
         with:
           context: ./backend
           push: false
-          tags: michael7119/anthropic-openai-bridge-backend:${{ github.ref_name }}
+          tags: michael7119/cc-switch-backend:${{ github.ref_name }}
           cache-from: type=local,src=/tmp/cache-backend
           cache-to: type=local,dest=/tmp/cache-backend,mode=max
 
@@ -185,7 +185,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: michael7119/anthropic-openai-bridge-frontend
+          images: michael7119/cc-switch-frontend
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -199,7 +199,7 @@ jobs:
         with:
           context: ./frontend
           push: false
-          tags: michael7119/anthropic-openai-bridge-frontend:${{ github.ref_name }}
+          tags: michael7119/cc-switch-frontend:${{ github.ref_name }}
           cache-from: type=local,src=/tmp/cache-frontend
           cache-to: type=local,dest=/tmp/cache-frontend,mode=max
 

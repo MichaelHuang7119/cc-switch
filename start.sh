@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Anthropic OpenAI Bridge - 统一启动脚本
+# CC Switch - 统一启动脚本
 # 使用 --dev 启用热重载，不使用则使用生产模式
 
 set -e
@@ -42,7 +42,7 @@ for arg in "$@"; do
     fi
 done
 
-echo "🚀 Anthropic OpenAI Bridge - 统一启动脚本"
+echo "🚀 CC Switch - 统一启动脚本"
 echo ""
 
 # 函数：检查端口是否可用

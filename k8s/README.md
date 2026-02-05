@@ -1,6 +1,6 @@
 # Kubernetes 部署指南
 
-本目录包含 Anthropic OpenAI Bridge 的 Kubernetes 部署配置。
+本目录包含 CC Switch 的 Kubernetes 部署配置。
 
 ## 前置要求
 
@@ -67,19 +67,19 @@ kubectl apply -f ingress.yaml
 
 ```bash
 # 检查所有 Pod 状态
-kubectl get pods -n anthropic-bridge
+kubectl get pods -n cc-switch
 
 # 检查服务
-kubectl get svc -n anthropic-bridge
+kubectl get svc -n cc-switch
 
 # 检查 HPA
-kubectl get hpa -n anthropic-bridge
+kubectl get hpa -n cc-switch
 
 # 查看后端日志
-kubectl logs -f deployment/backend -n anthropic-bridge
+kubectl logs -f deployment/backend -n cc-switch
 
 # 查看前端日志
-kubectl logs -f deployment/frontend -n anthropic-bridge
+kubectl logs -f deployment/frontend -n cc-switch
 ```
 
 ## 自动扩缩容
@@ -92,8 +92,8 @@ kubectl logs -f deployment/frontend -n anthropic-bridge
 查看扩缩容状态：
 
 ```bash
-kubectl describe hpa backend-hpa -n anthropic-bridge
-kubectl describe hpa frontend-hpa -n anthropic-bridge
+kubectl describe hpa backend-hpa -n cc-switch
+kubectl describe hpa frontend-hpa -n cc-switch
 ```
 
 ## 健康检查
@@ -113,8 +113,8 @@ kubectl describe hpa frontend-hpa -n anthropic-bridge
 手动触发滚动更新：
 
 ```bash
-kubectl rollout restart deployment/backend -n anthropic-bridge
-kubectl rollout restart deployment/frontend -n anthropic-bridge
+kubectl rollout restart deployment/backend -n cc-switch
+kubectl rollout restart deployment/frontend -n cc-switch
 ```
 
 ## 资源限制
@@ -137,13 +137,13 @@ kubectl rollout restart deployment/frontend -n anthropic-bridge
 
 ```bash
 # 后端日志
-kubectl logs -f deployment/backend -n anthropic-bridge
+kubectl logs -f deployment/backend -n cc-switch
 
 # 前端日志
-kubectl logs -f deployment/frontend -n anthropic-bridge
+kubectl logs -f deployment/frontend -n cc-switch
 
 # Redis 日志
-kubectl logs -f deployment/redis -n anthropic-bridge
+kubectl logs -f deployment/redis -n cc-switch
 ```
 
 ### 查看指标
@@ -156,10 +156,10 @@ kubectl logs -f deployment/redis -n anthropic-bridge
 
 ```bash
 # 查看 Pod 状态
-kubectl describe pod <pod-name> -n anthropic-bridge
+kubectl describe pod <pod-name> -n cc-switch
 
 # 查看事件
-kubectl get events -n anthropic-bridge --sort-by='.lastTimestamp'
+kubectl get events -n cc-switch --sort-by='.lastTimestamp'
 ```
 
 ### 健康检查失败
@@ -168,20 +168,20 @@ kubectl get events -n anthropic-bridge --sort-by='.lastTimestamp'
 
 ```bash
 # 后端健康检查
-kubectl exec -it deployment/backend -n anthropic-bridge -- curl http://localhost:8000/health
+kubectl exec -it deployment/backend -n cc-switch -- curl http://localhost:8000/health
 
 # 前端健康检查
-kubectl exec -it deployment/frontend -n anthropic-bridge -- curl http://localhost:80/
+kubectl exec -it deployment/frontend -n cc-switch -- curl http://localhost:80/
 ```
 
 ### 存储问题
 
 ```bash
 # 检查 PVC 状态
-kubectl get pvc -n anthropic-bridge
+kubectl get pvc -n cc-switch
 
 # 查看 PVC 详情
-kubectl describe pvc backend-data -n anthropic-bridge
+kubectl describe pvc backend-data -n cc-switch
 ```
 
 ## 清理
@@ -189,7 +189,7 @@ kubectl describe pvc backend-data -n anthropic-bridge
 删除所有资源：
 
 ```bash
-kubectl delete namespace anthropic-bridge
+kubectl delete namespace cc-switch
 ```
 
 **注意**：这将删除所有数据，包括持久化存储！

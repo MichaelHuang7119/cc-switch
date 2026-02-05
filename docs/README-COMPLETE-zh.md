@@ -1,6 +1,6 @@
-# Anthropic OpenAI Bridge
+# CC Switch
 
-[![CI/CD Status](https://github.com/michaelhuang7119/anthropic-openai-bridge/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/michaelhuang7119/anthropic-openai-bridge/actions)
+[![CI/CD Status](https://github.com/michaelhuang7119/cc-switch/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/michaelhuang7119/cc-switch/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-green.svg)](https://fastapi.tiangolo.com/)
@@ -10,7 +10,7 @@
 
 ## ✨ 项目简介
 
-Anthropic OpenAI Bridge 是一个企业级 API 代理服务，它实现了 Anthropic 兼容的 API 端点，并将请求转发到支持 OpenAI 兼容接口的后端供应商（如通义千问、ModelScope、AI Ping、Anthropic 等）。通过统一的 API 接口，您可以轻松切换不同的 AI 模型供应商，而无需修改客户端代码。
+CC Switch 是一个企业级 API 代理服务，它实现了 Anthropic 兼容的 API 端点，并将请求转发到支持 OpenAI 兼容接口的后端供应商（如通义千问、ModelScope、AI Ping、Anthropic 等）。通过统一的 API 接口，您可以轻松切换不同的 AI 模型供应商，而无需修改客户端代码。
 
 ## 🏗️ 项目架构
 
@@ -24,7 +24,7 @@ Anthropic OpenAI Bridge 是一个企业级 API 代理服务，它实现了 Anthr
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│              Anthropic OpenAI Bridge                         │
+│              CC Switch                         │
 ├─────────────────────┬───────────────────────────────────────┤
 │    前端 (Frontend)   │            后端 (Backend)              │
 │                     │                                       │
@@ -442,8 +442,8 @@ frontend/src/
 
 ```bash
 # 克隆项目
-git clone https://github.com/MichaelHuang7119/anthropic-openai-bridge.git
-cd anthropic-openai-bridge
+git clone https://github.com/MichaelHuang7119/cc-switch.git
+cd cc-switch
 
 # 启动所有服务（后端 + 前端）
 docker-compose up -d
@@ -542,8 +542,8 @@ export SERVICE_VERSION=1.0.0
 **1. 克隆项目**
 
 ```bash
-git clone https://github.com/MichaelHuang7119/anthropic-openai-bridge.git
-cd anthropic-openai-bridge
+git clone https://github.com/MichaelHuang7119/cc-switch.git
+cd cc-switch
 ```
 
 **2. 后端开发环境**
@@ -908,7 +908,7 @@ docs(readme): update deployment guide
 
 ### 报告问题
 
-请使用 [GitHub Issues](https://github.com/michaelhuang7119/anthropic-openai-bridge/issues) 报告问题。
+请使用 [GitHub Issues](https://github.com/michaelhuang7119/cc-switch/issues) 报告问题。
 
 **Bug 报告模板**：
 
@@ -1317,7 +1317,7 @@ python scripts/load_test.py --url http://localhost:5173 --qps 10000 --duration 6
 # 2. 构建阶段：自动构建 Docker 镜像
 # 3. 可选推送：如果设置了 DOCKERHUB_TOKEN secret，自动推送到 Docker Hub
 #    - 无secrets：仅构建，不推送
-#    - 有secrets：构建并推送到 michael7119/anthropic-openai-bridge-{backend,frontend}
+#    - 有secrets：构建并推送到 michael7119/cc-switch-{backend,frontend}
 ```
 
 **CI/CD 特性**：
@@ -1365,7 +1365,7 @@ CI/CD 配置文件位于：`.github/workflows/ci-cd.yml`
 ### 项目结构
 
 ```
-anthropic-openai-bridge/
+cc-switch/
 ├── backend/                    # 后端服务（FastAPI）
 │   ├── app/
 │   │   ├── api/               # API 路由层（RESTful API）
@@ -1932,7 +1932,7 @@ MIT License - 详情请查看 [LICENSE](LICENSE) 文件
 ```
 MIT License
 
-Copyright (c) 2025 Anthropic OpenAI Bridge
+Copyright (c) 2025 CC Switch
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1955,13 +1955,13 @@ SOFTWARE.
 
 ## 🔗 相关链接
 
-- **项目主页**：<https://github.com/michaelhuang7119/anthropic-openai-bridge>
-- **问题反馈**：<https://github.com/michaelhuang7119/anthropic-openai-bridge/issues>
-- **功能建议**：<https://github.com/michaelhuang7119/anthropic-openai-bridge/discussions>
+- **项目主页**：<https://github.com/michaelhuang7119/cc-switch>
+- **问题反馈**：<https://github.com/michaelhuang7119/cc-switch/issues>
+- **功能建议**：<https://github.com/michaelhuang7119/cc-switch/discussions>
 - **API 文档**：<http://localhost:8000/docs>
 - **Docker Hub 镜像**：
-  - Backend: <https://hub.docker.com/r/michael7119/anthropic-openai-bridge-backend>
-  - Frontend: <https://hub.docker.com/r/michael7119/anthropic-openai-bridge-frontend>
+  - Backend: <https://hub.docker.com/r/michael7119/cc-switch-backend>
+  - Frontend: <https://hub.docker.com/r/michael7119/cc-switch-frontend>
 - **Kubernetes 部署**：请查看 [k8s/README.md](./k8s/README.md)
 
 ## 🗺️ 路线图
@@ -2013,6 +2013,6 @@ SOFTWARE.
 
 **⭐ 如果这个项目对你有帮助，请给个 Star 支持一下！**
 
-Made with ❤️ by Anthropic OpenAI Bridge Team
+Made with ❤️ by CC Switch Team
 
 </div>

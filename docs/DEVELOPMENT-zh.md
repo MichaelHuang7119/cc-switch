@@ -1,7 +1,7 @@
 
 # 开发指南 (Development Guide)
 
-本文档是 **Anthropic OpenAI Bridge** 的详细开发指南，面向想要参与项目开发、维护或扩展的开发者。
+本文档是 **CC Switch** 的详细开发指南，面向想要参与项目开发、维护或扩展的开发者。
 
 ## 目录
 
@@ -33,7 +33,7 @@
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│              Anthropic OpenAI Bridge                         │
+│              CC Switch                         │
 ├─────────────────────┬───────────────────────────────────────┤
 │    前端 (Frontend)   │            后端 (Backend)              │
 │                     │                                       │
@@ -451,8 +451,8 @@ frontend/src/
 
 ```bash
 # 克隆项目
-git clone https://github.com/MichaelHuang7119/anthropic-openai-bridge.git
-cd anthropic-openai-bridge
+git clone https://github.com/MichaelHuang7119/cc-switch.git
+cd cc-switch
 
 # 启动所有服务（后端 + 前端）
 docker-compose up -d
@@ -549,8 +549,8 @@ export SERVICE_VERSION=1.0.0
 **1. 克隆项目**
 
 ```bash
-git clone https://github.com/MichaelHuang7119/anthropic-openai-bridge.git
-cd anthropic-openai-bridge
+git clone https://github.com/MichaelHuang7119/cc-switch.git
+cd cc-switch
 ```
 
 **2. 后端开发环境**
@@ -937,7 +937,7 @@ docs(readme): update deployment guide
 
 ### 报告问题
 
-请使用 [GitHub Issues](https://github.com/michaelhuang7119/anthropic-openai-bridge/issues) 报告问题。
+请使用 [GitHub Issues](https://github.com/michaelhuang7119/cc-switch/issues) 报告问题。
 
 **Bug 报告模板**：
 

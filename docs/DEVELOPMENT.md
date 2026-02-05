@@ -1,6 +1,6 @@
 # Development Guide
 
-This is the detailed development guide for **Anthropic OpenAI Bridge**, aimed at developers who want to participate in project development, maintenance, or extension.
+This is the detailed development guide for **CC Switch**, aimed at developers who want to participate in project development, maintenance, or extension.
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@ This is the detailed development guide for **Anthropic OpenAI Bridge**, aimed at
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│              Anthropic OpenAI Bridge                         │
+│              CC Switch                         │
 ├─────────────────────┬───────────────────────────────────────┤
 │    Frontend         │            Backend                    │
 │                     │                                       │
@@ -419,8 +419,8 @@ Using SQLite database to store all data:
 **1. Clone the Project**
 
 ```bash
-git clone https://github.com/MichaelHuang7119/anthropic-openai-bridge.git
-cd anthropic-openai-bridge
+git clone https://github.com/MichaelHuang7119/cc-switch.git
+cd cc-switch
 ```
 
 **2. Backend Development Environment**
@@ -1007,7 +1007,7 @@ docs(readme): update deployment guide
 
 ### Reporting Issues
 
-Please use [GitHub Issues](https://github.com/michaelhuang7119/anthropic-openai-bridge/issues) to report issues.
+Please use [GitHub Issues](https://github.com/michaelhuang7119/cc-switch/issues) to report issues.
 
 **Bug Report Template**:
 
@@ -1060,9 +1060,9 @@ Describe the use case for this feature.
 
 <div align="center">
 
-**Made with ❤️ by the AOB Team**
+**Made with ❤️ by the CCS Team**
 
 [Back to Main README](README.md) |
-[Issue Tracker](https://github.com/michaelhuang7119/anthropic-openai-bridge/issues)
+[Issue Tracker](https://github.com/michaelhuang7119/cc-switch/issues)
 
 </div>

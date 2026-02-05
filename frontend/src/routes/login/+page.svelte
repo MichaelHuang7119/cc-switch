@@ -40,7 +40,7 @@
   // 页面加载时初始化
   onMount(() => {
     if (browser) {
-      document.title = 'Login - Anthropic OpenAI Bridge';
+      document.title = 'Login - CC Switch';
       handleErrorParams();
     }
   });
@@ -117,7 +117,7 @@
     <div class="login-title-wrapper">
       <span class="login-logo-inline">{@html faviconSvg}</span>
       <div class="login-title-group">
-        <h1 class="login-title">Anthropic OpenAI Bridge</h1>
+        <h1 class="login-title">CC Switch</h1>
       </div>
     </div>
     <form onsubmit={(e) => { e.preventDefault(); handleSubmit(); }} class="login-form">

@@ -1,6 +1,6 @@
-# Anthropic OpenAI Bridge
+# CC Switch
 
-[![CI/CD Status](https://github.com/michaelhuang7119/anthropic-openai-bridge/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/michaelhuang7119/anthropic-openai-bridge/actions)
+[![CI/CD Status](https://github.com/michaelhuang7119/cc-switch/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/michaelhuang7119/cc-switch/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-green.svg)](https://fastapi.tiangolo.com/)
@@ -10,7 +10,7 @@ A high-performance AI model proxy service based on FastAPI and Svelte 5, support
 
 ## ✨ Project Introduction
 
-Anthropic OpenAI Bridge is an enterprise-grade API proxy service that implements Anthropic-compatible API endpoints and forwards requests to backend providers supporting OpenAI-compatible interfaces (such as Qwen, ModelScope, AI Ping, Anthropic, etc.). Through a unified API interface, you can easily switch between different AI model providers without modifying client code.
+CC Switch is an enterprise-grade API proxy service that implements Anthropic-compatible API endpoints and forwards requests to backend providers supporting OpenAI-compatible interfaces (such as Qwen, ModelScope, AI Ping, Anthropic, etc.). Through a unified API interface, you can easily switch between different AI model providers without modifying client code.
 
 ## 🏗️ Project Architecture
 
@@ -24,7 +24,7 @@ Anthropic OpenAI Bridge is an enterprise-grade API proxy service that implements
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│              Anthropic OpenAI Bridge                         │
+│              CC Switch                         │
 ├─────────────────────┬───────────────────────────────────────┤
 │    Frontend         │            Backend                    │
 │                     │                                       │
@@ -443,8 +443,8 @@ Using SQLite database to store all data:
 
 ```bash
 # Clone the repository
-git clone https://github.com/MichaelHuang7119/anthropic-openai-bridge.git
-cd anthropic-openai-bridge
+git clone https://github.com/MichaelHuang7119/cc-switch.git
+cd cc-switch
 
 # Start all services (backend + frontend)
 docker-compose up -d
@@ -1310,7 +1310,7 @@ console.log(get(authService));
 docker-compose logs -f backend
 
 # Or with journalctl (if using systemd)
-journalctl -u anthropic-openai-bridge -f
+journalctl -u cc-switch -f
 
 # Search for errors
 grep "ERROR" backend/logs/app.log
@@ -1327,9 +1327,9 @@ sqlite3 backend/data/app.db "SELECT * FROM request_logs ORDER BY created_at DESC
 
 <div align="center">
 
-**Made with ❤️ by the AOB Team**
+**Made with ❤️ by the CCS Team**
 
 [Back to Main README](README.md) |
-[Issue Tracker](https://github.com/michaelhuang7119/anthropic-openai-bridge/issues)
+[Issue Tracker](https://github.com/michaelhuang7119/cc-switch/issues)
 
 </div>

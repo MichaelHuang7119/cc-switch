@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Anthropic OpenAI Bridge - 后端启动脚本
+# CC Switch - 后端启动脚本
 
 # 函数：加载.env文件
 load_env() {
@@ -60,7 +60,7 @@ done
 # 设置日志级别环境变量
 export LOG_LEVEL
 
-echo "🚀 Anthropic OpenAI Bridge - 启动后端服务..."
+echo "🚀 CC Switch - 启动后端服务..."
 echo ""
 
 # 使用环境变量中的端口（如果设置了）

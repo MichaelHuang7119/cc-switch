@@ -1,4 +1,4 @@
-"""Configuration management for Anthropic OpenAI Bridge"""
+"""Configuration management for CC Switch"""
 
 import json
 import os
@@ -74,7 +74,7 @@ class ObservabilityConfig(BaseModel):
     )
     otlp_endpoint: Optional[str] = Field(default=None, description="OTLP endpoint URL")
     otlp_service_name: str = Field(
-        default="anthropic-openai-bridge", description="Service name for OTLP"
+        default="cc-switch", description="Service name for OTLP"
     )
     otlp_headers: Dict[str, str] = Field(
         default_factory=dict, description="OTLP authentication headers"

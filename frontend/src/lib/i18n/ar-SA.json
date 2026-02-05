@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
-    "subtitle": "ربط ذكائين اصطناعيين قويين"
+    "title": "CC Switch",
+    "subtitle": "AI Model API Proxy"
   },
   "nav": {
     "home": "الرئيسية",
@@ -599,7 +599,7 @@
       "copyFailed": "فشل النسخ، يرجى النسخ يدوياً"
     },
     "welcome": {
-      "title": "مرحباً بك في Anthropic OpenAI Bridge",
+      "title": "Welcome to CC Switch",
       "subtitle": "إدارة موحدة لعدة مزودي نماذج الذكاء الاصطناعي لتحسين كفاءة التطوير"
     },
     "welcomeActions": {
@@ -651,7 +651,7 @@
     "toggleThemeShortcut": "(اختصارات تبديل السمة: مجموعات متعددة مدعومة)"
   },
   "welcome": {
-    "title": "مرحباً بك في Anthropic OpenAI Bridge",
+    "title": "Welcome to CC Switch",
     "projectDescription": "خدمة جسر قوية تربط Claude ومزودي الذكاء الاصطناعي الآخرين، مما يتيح الوصول الموحد لـ API وآليات التحويل الذكي للتكامل السلس مع الذكاء الاصطناعي.",
     "feature1": "وصول موحد لـ API إلى مزودي ذكاء اصطناعي متعددين (Claude و OpenAI وغيرهما)",
     "feature2": "تحويل ذكي للمزود وحماية قاطع الدائرة",

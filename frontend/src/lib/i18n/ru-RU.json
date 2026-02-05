@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
-    "subtitle": "Соединяем два мощных ИИ"
+    "title": "CC Switch",
+    "subtitle": "AI Model API Proxy"
   },
   "nav": {
     "home": "Главная",
@@ -599,7 +599,7 @@
       "copyFailed": "Не удалось скопировать, пожалуйста, скопируйте вручную"
     },
     "welcome": {
-      "title": "Добро пожаловать в Anthropic OpenAI Bridge",
+      "title": "Welcome to CC Switch",
       "subtitle": "Единое управление несколькими поставщиками моделей ИИ для повышения эффективности разработки"
     },
     "welcomeActions": {
@@ -651,7 +651,7 @@
     "toggleThemeShortcut": "(Горячие клавиши переключения темы: поддерживаются несколько комбинаций)"
   },
   "welcome": {
-    "title": "Добро пожаловать в Anthropic OpenAI Bridge",
+    "title": "Welcome to CC Switch",
     "projectDescription": "Мощный сервис-мост, который соединяет Claude и других провайдеров ИИ, обеспечивая унифицированный доступ к API и интеллектуальные механизмы отката для бесшовной интеграции ИИ.",
     "feature1": "Унифицированный API-доступ к нескольким провайдерам ИИ (Claude, OpenAI и др.)",
     "feature2": "Интеллектуальный откат провайдера и защита автоматическим выключателем",

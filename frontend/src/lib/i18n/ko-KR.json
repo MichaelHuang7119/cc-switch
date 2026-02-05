@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
-    "subtitle": "두 개의 강력한 AI 연결"
+    "title": "CC Switch",
+    "subtitle": "AI Model API Proxy"
   },
   "nav": {
     "home": "홈",
@@ -599,7 +599,7 @@
       "copyFailed": "복사 실패. 수동으로 복사하세요"
     },
     "welcome": {
-      "title": "Anthropic OpenAI Bridge에 오신 것을 환영합니다",
+      "title": "CC Switch에 오신 것을 환영합니다",
       "subtitle": "개발 효율성을 높이기 위한 여러 AI 모델 공급업체의 통합 관리"
     },
     "welcomeActions": {
@@ -651,7 +651,7 @@
     "toggleThemeShortcut": "(테마 전환 단축키: 여러 조합 지원)"
   },
   "welcome": {
-    "title": "Anthropic OpenAI Bridge 에 오신 것을 환영합니다",
+    "title": "CC Switch 에 오신 것을 환영합니다",
     "projectDescription": "Claude 및 기타 AI 제공자를 연결하는 강력한 브리지 서비스로, 통합 API 액세스와 지능형 폴백 메커니즘을 제공하여 원활한 AI 통합을 가능하게 합니다.",
     "feature1": "여러 AI 제공자(Claude, OpenAI 등)에 대한 통합 API 액세스",
     "feature2": "지능형 제공자 폴백 및 회로 차단기 보호",

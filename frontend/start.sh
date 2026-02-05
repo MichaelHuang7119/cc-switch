@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Anthropic OpenAI Bridge - 前端启动脚本
+# CC Switch - 前端启动脚本
 
 # 函数：加载.env文件
 load_env() {
@@ -44,7 +44,7 @@ for arg in "$@"; do
     fi
 done
 
-echo "🚀 Anthropic OpenAI Bridge - 启动前端服务器..."
+echo "🚀 CC Switch - 启动前端服务器..."
 echo ""
 
 # 检查 Node.js

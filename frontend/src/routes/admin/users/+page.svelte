@@ -266,7 +266,7 @@
 </script>
 
 <svelte:head>
-  <title>{t("users.title")} - Anthropic OpenAI Bridge</title>
+  <title>{t("users.title")} - CC Switch</title>
 </svelte:head>
 
 <div class="container">

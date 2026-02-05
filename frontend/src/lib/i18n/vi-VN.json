@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
-    "subtitle": "Kết nối hai AI mạnh mẽ"
+    "title": "CC Switch",
+    "subtitle": "AI Model API Proxy"
   },
   "nav": {
     "home": "Trang chủ",
@@ -599,7 +599,7 @@
       "copyFailed": "Sao chép thất bại, vui lòng sao chép thủ công"
     },
     "welcome": {
-      "title": "Chào mừng đến với Anthropic OpenAI Bridge",
+      "title": "Welcome to CC Switch",
       "subtitle": "Quản lý thống nhất nhiều nhà cung cấp mô hình AI để nâng cao hiệu quả phát triển"
     },
     "welcomeActions": {
@@ -651,7 +651,7 @@
     "toggleThemeShortcut": "(Phím tắt chuyển đổi chủ đề: hỗ trợ nhiều kết hợp)"
   },
   "welcome": {
-    "title": "Chào mừng đến với Anthropic OpenAI Bridge",
+    "title": "Welcome to CC Switch",
     "projectDescription": "Một dịch vụ cầu nối mạnh mẽ kết nối Claude và các nhà cung cấp AI khác, cho phép truy cập API thống nhất và cơ chế fallback thông minh để tích hợp AI liền mạch.",
     "feature1": "Truy cập API thống nhất cho nhiều nhà cung cấp AI (Claude, OpenAI, v.v.)",
     "feature2": "Fallback nhà cung cấp thông minh và bảo vệ circuit breaker",

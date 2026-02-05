@@ -32,7 +32,7 @@
       // Handle OAuth errors from provider - only show error page for failures
       if (error || !code || !provider) {
         // Set page title before redirect
-        document.title = 'Login Failed - Anthropic OpenAI Bridge';
+        document.title = 'Login Failed - CC Switch';
         // Invalid or failed OAuth, redirect to login with error
         const params = new URLSearchParams();
         if (error) params.set('error', error);
@@ -47,7 +47,7 @@
 
       if (result.access_token) {
         // Set page title before redirect
-        document.title = 'Logging in... - Anthropic OpenAI Bridge';
+        document.title = 'Logging in... - CC Switch';
         // Use goto instead of window.location.href to avoid "leave site" prompt
         const authUrl = `/auth?token=${encodeURIComponent(result.access_token)}`;
         await goto(authUrl, { replaceState: true, noScroll: true });
@@ -57,7 +57,7 @@
 
     } catch (err) {
       // On error, redirect to login page with error message
-      document.title = 'Login Failed - Anthropic OpenAI Bridge';
+      document.title = 'Login Failed - CC Switch';
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
       await goto(`/login?error=oauth_failed&error_description=${encodeURIComponent(errorMessage)}`, { replaceState: true });
     }
@@ -69,7 +69,7 @@
 </script>
 
 <svelte:head>
-  <title>Logging in... - Anthropic OpenAI Bridge</title>
+  <title>Logging in... - CC Switch</title>
 </svelte:head>
 
 <!-- Minimal loading indicator - no success animation -->

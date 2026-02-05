@@ -1,6 +1,6 @@
-# Anthropic OpenAI Bridge
+# CC Switch
 
-[![CI/CD Status](https://github.com/michaelhuang7119/anthropic-openai-bridge/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/michaelhuang7119/anthropic-openai-bridge/actions)
+[![CI/CD Status](https://github.com/michaelhuang7119/cc-switch/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/michaelhuang7119/cc-switch/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-green.svg)](https://fastapi.tiangolo.com/)
@@ -12,7 +12,7 @@ A high-performance AI model proxy service based on FastAPI and Svelte 5, support
 
 ## ✨ Project Introduction
 
-Anthropic OpenAI Bridge is an enterprise-grade API proxy service that implements Anthropic-compatible API endpoints and forwards requests to backend providers supporting OpenAI-compatible interfaces (such as Qwen, ModelScope, AI Ping, Anthropic, etc.). Through a unified API interface, you can easily switch between different AI model providers without modifying client code.
+CC Switch is an enterprise-grade API proxy service that implements Anthropic-compatible API endpoints and forwards requests to backend providers supporting OpenAI-compatible interfaces (such as Qwen, ModelScope, AI Ping, Anthropic, etc.). Through a unified API interface, you can easily switch between different AI model providers without modifying client code.
 
 ## 🏗️ Project Architecture
 
@@ -212,8 +212,8 @@ Client
 
 ```bash
 # Clone the repository
-git clone https://github.com/MichaelHuang7119/anthropic-openai-bridge.git
-cd anthropic-openai-bridge
+git clone https://github.com/MichaelHuang7119/cc-switch.git
+cd cc-switch
 
 # Start all services (backend + frontend)
 docker-compose up -d
@@ -552,7 +552,7 @@ curl -H "Authorization: Bearer <your-jwt-token>" \
 - 🎮 **Online Demo** - (Coming Soon)
 
 ### 🐛 Support & Issues
-- 📝 **[Issue Tracker](https://github.com/michaelhuang7119/anthropic-openai-bridge/issues)** - Report bugs and request features
+- 📝 **[Issue Tracker](https://github.com/michaelhuang7119/cc-switch/issues)** - Report bugs and request features
 
 ### 🇨🇳 Chinese Resources
 - 📄 **[中文快速指南](README-zh.md)** - 中文版说明文档
@@ -629,9 +629,9 @@ Thanks to all developers who have contributed to this project!
 
 **[Documentation](docs/README-COMPLETE.md)** |
 **[Development Guide](docs/DEVELOPMENT.md)** |
-**[Issue Tracker](https://github.com/michaelhuang7119/anthropic-openai-bridge/issues)** |
+**[Issue Tracker](https://github.com/michaelhuang7119/cc-switch/issues)** |
 **[Changelog](CHANGELOG.md)**
 
-Made with ❤️ by the AOB Team
+Made with ❤️ by the CCS Team
 
 </div>

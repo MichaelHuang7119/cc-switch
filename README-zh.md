@@ -1,6 +1,6 @@
-# Anthropic OpenAI Bridge
+# CC Switch
 
-[![CI/CD Status](https://github.com/michaelhuang7119/anthropic-openai-bridge/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/michaelhuang7119/anthropic-openai-bridge/actions)
+[![CI/CD Status](https://github.com/michaelhuang7119/cc-switch/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/michaelhuang7119/cc-switch/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-green.svg)](https://fastapi.tiangolo.com/)
@@ -12,7 +12,7 @@
 
 ## ✨ 项目简介
 
-Anthropic OpenAI Bridge 是一个企业级 API 代理服务，它实现了 Anthropic 兼容的 API 端点，并将请求转发到支持 OpenAI 兼容接口的后端供应商（如通义千问、ModelScope、AI Ping、Anthropic 等）。通过统一的 API 接口，您可以轻松切换不同的 AI 模型供应商，而无需修改客户端代码。
+CC Switch 是一个企业级 API 代理服务，它实现了 Anthropic 兼容的 API 端点，并将请求转发到支持 OpenAI 兼容接口的后端供应商（如通义千问、ModelScope、AI Ping、Anthropic 等）。通过统一的 API 接口，您可以轻松切换不同的 AI 模型供应商，而无需修改客户端代码。
 
 ## 🏗️ 项目架构
 
@@ -212,8 +212,8 @@ API 路由 (/routes/messages.py, /routes/*.py)
 
 ```bash
 # 克隆项目
-git clone https://github.com/MichaelHuang7119/anthropic-openai-bridge.git
-cd anthropic-openai-bridge
+git clone https://github.com/MichaelHuang7119/cc-switch.git
+cd cc-switch
 
 # 启动所有服务（后端 + 前端）
 docker-compose up -d
@@ -551,7 +551,7 @@ curl -H "Authorization: Bearer <your-jwt-token>" \
 - 🎮 **在线演示** - (待添加)
 
 ### 🐛 支持与问题反馈
-- 📝 **[问题反馈](https://github.com/michaelhuang7119/anthropic-openai-bridge/issues)** - 报告问题和功能请求
+- 📝 **[问题反馈](https://github.com/michaelhuang7119/cc-switch/issues)** - 报告问题和功能请求
 
 ### 🇺🇸 英文资源
 - 📄 **[English Quick Guide](README.md)** - 英文版说明文档
@@ -628,9 +628,9 @@ curl -H "Authorization: Bearer <your-jwt-token>" \
 
 **[文档](docs/README-COMPLETE-zh.md)** |
 **[开发指南](docs/DEVELOPMENT-zh.md)** |
-**[问题反馈](https://github.com/michaelhuang7119/anthropic-openai-bridge/issues)** |
+**[问题反馈](https://github.com/michaelhuang7119/cc-switch/issues)** |
 **[更新日志](CHANGELOG.md)**
 
-Made with ❤️ by the AOB Team
+Made with ❤️ by the CCS Team
 
 </div>

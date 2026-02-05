@@ -40,7 +40,7 @@
     "enable_slow_request_alert": true,
     "otel_enabled": false,
     "otlp_endpoint": "http://localhost:4317",
-    "otlp_service_name": "anthropic-openai-bridge",
+    "otlp_service_name": "cc-switch",
     "otlp_headers": {}
   }
 }

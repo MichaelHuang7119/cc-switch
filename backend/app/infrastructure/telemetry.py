@@ -12,7 +12,7 @@ _initialized = False
 
 
 def initialize_telemetry(
-    service_name: str = "anthropic-openai-bridge",
+    service_name: str = "cc-switch",
     otlp_endpoint: Optional[str] = None,
     enable_tracing: bool = True,
     enable_metrics: bool = True

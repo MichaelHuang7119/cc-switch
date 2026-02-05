@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
-    "subtitle": "Menghubungkan Dua AI yang Kuat"
+    "title": "CC Switch",
+    "subtitle": "AI Model API Proxy"
   },
   "nav": {
     "home": "Beranda",
@@ -599,7 +599,7 @@
       "copyFailed": "Gagal menyalin, silakan salin secara manual"
     },
     "welcome": {
-      "title": "Selamat datang di Anthropic OpenAI Bridge",
+      "title": "Selamat datang di CC Switch",
       "subtitle": "Manajemen terpadu beberapa penyedia model AI untuk meningkatkan efisiensi pengembangan"
     },
     "welcomeActions": {
@@ -651,7 +651,7 @@
     "toggleThemeShortcut": "(Pintasan切换 tema: beberapa kombinasi didukung)"
   },
   "welcome": {
-    "title": "Selamat datang di Anthropic OpenAI Bridge",
+    "title": "Selamat datang di CC Switch",
     "projectDescription": "Layanan jembatan yang мощный yang menghubungkan Claude dan penyedia AI lainnya, memungkinkan akses API terpadu dan mekanisme fallback cerdas untuk integrasi AI yang mulus.",
     "feature1": "Akses API terpadu ke beberapa penyedia AI (Claude, OpenAI, dll.)",
     "feature2": "Fallback penyedia cerdas dan perlindungan pemutus sirkuit",

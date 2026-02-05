@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
-    "subtitle": "连接两个强大AI的桥梁"
+    "title": "CC Switch",
+    "subtitle": "AI 模型代理服务"
   },
   "nav": {
     "home": "首页",
@@ -197,7 +197,7 @@
     "selectModelFirst": "请先选择模型"
   },
   "welcome": {
-    "title": "欢迎使用 Anthropic OpenAI Bridge",
+    "title": "欢迎使用 CC Switch",
     "projectDescription": "一个强大的桥接服务，连接 Claude 和其他 AI 提供商，提供统一的 API 访问和智能回退机制，实现无缝的 AI 集成体验。",
     "feature1": "统一 API 访问多个 AI 提供商（Claude、OpenAI 等）",
     "feature2": "智能提供商回退和熔断器保护",
@@ -538,7 +538,7 @@
   "home": {
     "title": "仪表板",
     "welcome": {
-      "title": "欢迎使用 Anthropic OpenAI Bridge",
+      "title": "欢迎使用 CC Switch",
       "subtitle": "统一管理多个AI模型提供商，提升开发效率"
     },
     "systemStatus": {

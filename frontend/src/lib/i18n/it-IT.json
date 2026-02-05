@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
+    "title": "CC Switch",
     "subtitle": "Collegando due IA potenti"
   },
   "nav": {
@@ -599,7 +599,7 @@
       "copyFailed": "Copia fallita, per favore copia manualmente"
     },
     "welcome": {
-      "title": "Benvenuto in Anthropic OpenAI Bridge",
+      "title": "Benvenuto in CC Switch",
       "subtitle": "Gestione unificata di più fornitori di modelli AI per migliorare l'efficienza dello sviluppo"
     },
     "welcomeActions": {
@@ -651,7 +651,7 @@
     "toggleThemeShortcut": "(Scorciatoie cambio tema: più combinazioni supportate)"
   },
   "welcome": {
-    "title": "Benvenuto in Anthropic OpenAI Bridge",
+    "title": "Benvenuto in CC Switch",
     "projectDescription": "Un potente servizio ponte che connette Claude e altri provider AI, abilitando l'accesso API unificato e meccanismi di fallback intelligenti per un'integrazione AI fluida.",
     "feature1": "Accesso API unificato a più provider AI (Claude, OpenAI, ecc.)",
     "feature2": "Fallback intelligente del provider e protezione circuit breaker",

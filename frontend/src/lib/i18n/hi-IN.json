@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Anthropic OpenAI Bridge",
-    "subtitle": "दो शक्तिशाली AI को जोड़ना"
+    "title": "CC Switch",
+    "subtitle": "AI Model API Proxy"
   },
   "nav": {
     "home": "होम",
@@ -599,7 +599,7 @@
       "copyFailed": "कॉपी विफल, कृपया मैन्युअल रूप से कॉपी करें"
     },
     "welcome": {
-      "title": "Anthropic OpenAI Bridge में आपका स्वागत है",
+      "title": "Welcome to CC Switch",
       "subtitle": "विकास दक्षता में सुधार के लिए एकाधिक AI मॉडल प्रदाताओं का एकीकृत प्रबंधन"
     },
     "welcomeActions": {
@@ -651,7 +651,7 @@
     "toggleThemeShortcut": "(थीम टॉगल शॉर्टकट: कई संयोजन समर्थित)"
   },
   "welcome": {
-    "title": "Anthropic OpenAI Bridge में आपका स्वागत है",
+    "title": "Welcome to CC Switch",
     "projectDescription": "एक शक्तिशाली ब्रिज सेवा जो Claude और अन्य AI प्रदाताओं को जोड़ती है, जिससे एकीकृत API पहुंच और निर्बाध AI एकीकरण के लिए बुद्धिमान फॉलबैक तंत्र मिलता है।",
     "feature1": "कई AI प्रदाताओं (Claude, OpenAI आदि) तक एकीकृत API पहुंच",
     "feature2": "बुद्धिमान प्रदाता फॉलबैक और सर्किट ब्रेकर सुरक्षा",

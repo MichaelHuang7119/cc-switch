@@ -8,7 +8,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: anthropic-openai-bridge-backend
+    container_name: cc-switch-backend
     # 不映射端口到宿主机，仅在内部网络可用
     environment:
       - HOST=0.0.0.0
@@ -37,7 +37,7 @@ services:
       # - /etc/localtime:/etc/localtime:ro
       # - /etc/timezone:/etc/timezone:ro
     networks:
-      - anthropic-openai-bridge-network
+      - cc-switch-network
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
@@ -50,7 +50,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: anthropic-openai-bridge-frontend
+    container_name: cc-switch-frontend
     ports:
       # 使用 EXPOSE_PORT 动态映射端口（默认5173）
       - "${EXPOSE_PORT:-5173}:80"
@@ -59,13 +59,14 @@ services:
       - EXPOSE_PORT=${EXPOSE_PORT:-5173}
       - TZ=Asia/Shanghai
     networks:
-      - anthropic-openai-bridge-network
+      - cc-switch-network
     restart: unless-stopped
     depends_on:
       backend:
         condition: service_healthy
 
 networks:
-  anthropic-openai-bridge-network:
+  cc-switch-network:
+    name: cc-switch-network
     driver: bridge
 

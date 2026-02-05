@@ -248,7 +248,7 @@ class AuthService {
     if (browser) {
       localStorage.removeItem("welcome_shown");
       // Set page title before redirect
-      document.title = "Login - Anthropic OpenAI Bridge";
+      document.title = "Login - CC Switch";
       goto("/login");
     }
   }
