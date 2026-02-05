@@ -178,3 +178,9 @@ async def on_startup():
 async def on_shutdown():
     """Application shutdown event."""
     await shutdown_event()
+
+
+@app.get("/health")
+async def docker_health_check():
+    """Docker health check endpoint - no authentication required."""
+    return {"status": "healthy"}

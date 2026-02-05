@@ -60,6 +60,8 @@ class MessageCreate(BaseModel):
     parent_message_id: Optional[int] = None
     model_instance_index: Optional[int] = None
 
+    model_config = {"protected_namespaces": ()}
+
 class ConversationResponse(BaseModel):
     """Conversation response model."""
     id: int
@@ -85,6 +87,8 @@ class MessageResponse(BaseModel):
     api_format: Optional[str]
     parent_message_id: Optional[int] = None
     model_instance_index: Optional[int] = None
+
+    model_config = {"protected_namespaces": ()}
 
 class ConversationDetailResponse(BaseModel):
     """Detailed conversation response with messages."""

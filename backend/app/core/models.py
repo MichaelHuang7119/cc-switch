@@ -141,6 +141,8 @@ class MessageResponse(BaseModel):
     context_management: Optional[Dict[str, Any]] = None  # Optional per spec
     container: Optional[Dict[str, Any]] = None  # Optional per spec
 
+    model_config = {"protected_namespaces": ()}
+
 
 class StreamResponse(BaseModel):
     """Anthropic streaming response."""
