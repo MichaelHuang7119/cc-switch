@@ -510,11 +510,12 @@
       const { provider: providerData, api_format } = saveData;
 
       if (editingProvider) {
-        // Pass api_format for precise provider identification
+        // Pass original api_format for precise provider identification
+        // Pass new api_format in providerData for update
         await providerService.update(
           editingProvider.name,
           providerData,
-          api_format,
+          editingProvider.api_format,
         );
       } else {
         await providerService.create(providerData);
